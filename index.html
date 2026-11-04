@@ -689,6 +689,20 @@ body.sin-cursor, body.sin-cursor * { cursor: none !important; }
 
 .overview .kpis .fuente { margin-top: 18px; }
 
+/* Celulares: comparación solo en barras e Internacionalización ajustada */
+@media (max-width: 560px) {
+  .seg button[data-viz="mapa"] { display: none; }
+  .erasmus > .stat.intl { padding: 12px 14px; gap: 10px; }
+  .erasmus .stat.intl .globo { width: 28px; height: 28px; }
+  .erasmus .stat.intl b.key { font-size: 1.35rem; overflow-wrap: anywhere; }
+  .erasmus > .stat.intl .sub { font-size: .9rem; }
+  .erasmus > .stat.intl > div { min-width: 0; gap: 4px 10px; }
+  .inic .in-body { height: 150px; }
+  .inic .pj .cli { font-size: 1.3rem; }
+  .proy-body { height: 200px; }
+  .pj .cli { font-size: 1.4rem; }
+}
+
 /* ---------- Pie ---------- */
 footer { border-top: 1px solid var(--line); margin-top: 24px; padding-block: 24px 36px; color: var(--fg-2); font-size: .92rem; }
 footer .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: start; }
@@ -1277,6 +1291,7 @@ footer .firma svg { width: 28px; height: 28px; }
   var DRAW = { dona: drawDona, mapa: drawMapa, barras: drawBarras };
   function vizVisible() { return viz.getClientRects().length > 0; }
   function setViz(mode, animate, sinProgreso) {
+    if (mode === "mapa" && window.innerWidth < 560) mode = "barras";
     vizMode = mode;
     vizClear();
     document.querySelectorAll("[data-viz]").forEach(function (b) {
