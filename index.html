@@ -1,0 +1,1649 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cifras de Impacto CEA</title>
+<meta name="description" content="Cifras de impacto del Centro de Innovación Pedagógica y Educación Digital (CEA) de la Universidad de San Buenaventura Cali. Fuente: informe interno del CEA.">
+<meta property="og:title" content="Cifras de Impacto CEA">
+<meta property="og:description" content="Formación docente, gestión curricular, educación digital e inteligencia artificial en cifras.">
+<meta property="og:image" content="assets/og-1200x630.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>html{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Source+Sans+3:wght@400;600&family=Chakra+Petch:wght@700&display=swap">
+<style>
+/* Layout: retícula 4 × 4 del CEA. Cabecera institucional, símbolo interactivo (cada pieza filtra su área),
+   franja de cifras clave y una sección por área en el orden de las piezas. Modo noche por defecto. */
+:root {
+  --bg: #0d2227;
+  --surface: #11292f;
+  --surface-2: #163239;
+  --line: rgba(232, 239, 236, .14);
+  --fg: #e8efec;
+  --fg-2: #a9bbb7;
+  --accent: #6dcbd6;
+  --divider: rgba(232, 239, 236, .35);
+  --dot: rgba(232, 239, 236, .09);
+  --formacion: #f37012;
+  --curricular: #5b78f0;
+  --digital: #14b0bd;
+  --ia: #a66cf0;
+  --p-formacion: #f37012;
+  --p-curricular: #5b78f0;
+  --p-digital: #14b0bd;
+  --p-ia: #a66cf0;
+  --show-night: inline-block;
+  --show-day: none;
+
+  --font-display: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-key: "Chakra Petch", "Manrope", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+
+  --radio: 14px;
+  --curva: cubic-bezier(.16, 1, .3, 1);
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #fafbf7; --surface: #ffffff; --surface-2: #e8f2e9; --line: #cad6d0;
+    --fg: #183a43; --fg-2: #52656a; --accent: #087f91;
+    --divider: rgba(24, 58, 67, .35); --dot: rgba(24, 58, 67, .10);
+    --formacion: #d95f06; --curricular: #06538c; --digital: #0b7d90; --ia: #7444e6;
+    --p-formacion: #f37012; --p-curricular: #0860a0; --p-digital: #1399b0; --p-ia: #8a5cf6;
+    --show-night: none; --show-day: inline-block;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #fafbf7; --surface: #ffffff; --surface-2: #e8f2e9; --line: #cad6d0;
+  --fg: #183a43; --fg-2: #52656a; --accent: #087f91;
+  --divider: rgba(24, 58, 67, .35); --dot: rgba(24, 58, 67, .10);
+  --formacion: #d95f06; --curricular: #06538c; --digital: #0b7d90; --ia: #7444e6;
+  --p-formacion: #f37012; --p-curricular: #0860a0; --p-digital: #1399b0; --p-ia: #8a5cf6;
+  --show-night: none; --show-day: inline-block;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1.2px);
+  background-size: 28px 28px;
+  color: var(--fg);
+  font: 400 1.0625rem/1.5 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+.wrap {
+  max-width: 1200px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; text-wrap: balance; margin: 0; letter-spacing: -.01em; }
+p { margin: 0; }
+.label {
+  font: 500 .72rem/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: .14em; color: var(--fg-2);
+}
+.num { font-family: var(--font-display); font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.key { font-family: var(--font-key); font-weight: 700; letter-spacing: .01em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.night-only { display: var(--show-night); }
+.day-only { display: var(--show-day); }
+
+/* ---------- Cabecera ---------- */
+.top { padding-block: 22px 10px; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 16px; }
+.brand .usb { height: 42px; width: auto; }
+.brand .sep { width: 1px; height: 42px; background: var(--divider); }
+.brand .cea { height: 44px; width: auto; }
+.theme-btn {
+  font: 600 .9rem var(--font-body); color: var(--fg); background: transparent;
+  border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px; transition: border-color .25s var(--curva);
+}
+.theme-btn:hover { border-color: var(--accent); }
+.theme-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Hero ---------- */
+.hero { padding-block: 28px 20px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.hero h1 { font-size: clamp(2.1rem, 4.6vw, 3.6rem); line-height: 1.04; margin-block: 12px 18px; }
+.hero h1 .key { color: var(--accent); }
+.hero .lede { color: var(--fg-2); max-width: 60ch; font-size: 1.125rem; }
+.hero .lede strong { color: var(--fg); font-weight: 600; }
+.period { display: inline-flex; gap: 10px; align-items: center; margin-top: 20px; flex-wrap: wrap; }
+.pill {
+  font: 600 .82rem var(--font-body); border-radius: 999px; padding: 4px 12px;
+  border: 1px solid var(--line); color: var(--fg); background: var(--surface);
+}
+
+.mapa { display: grid; grid-template-columns: minmax(150px, 230px) minmax(0, 1fr); gap: 20px; align-items: center; }
+.symbol { width: 100%; max-width: 230px; height: auto; display: block; overflow: visible; }
+.symbol .piece { cursor: pointer; transition: opacity .35s var(--curva); outline: none; }
+.symbol .piece path { transition: transform .5s var(--curva); transform-box: fill-box; transform-origin: center; }
+.symbol .piece:focus-visible path { stroke: var(--fg); stroke-width: 2.5; }
+.symbol[data-active]:not([data-active="todas"]) .piece:not(.on) { opacity: .18; }
+.leyenda { display: grid; gap: 6px; list-style: none; margin: 0; padding: 0; min-width: 0; }
+.leyenda button {
+  width: 100%; text-align: left; background: transparent; border: 0; color: var(--fg); cursor: pointer;
+  font: 600 .98rem/1.25 var(--font-body); padding: 8px 10px; border-radius: 10px;
+  display: grid; grid-template-columns: 14px 1fr; gap: 10px; align-items: start;
+  transition: background-color .25s var(--curva), opacity .35s var(--curva);
+}
+.leyenda button:hover, .leyenda button[aria-pressed="true"] { background: var(--surface-2); }
+.leyenda .sw { width: 14px; height: 14px; border-radius: 3px; margin-top: 3px; }
+.leyenda small { display: block; font-weight: 400; color: var(--fg-2); font-size: .86rem; margin-top: 2px; }
+.mapa[data-active]:not([data-active="todas"]) .leyenda button[aria-pressed="false"] { opacity: .45; }
+
+/* ---------- Barra de filtro ---------- */
+.filtro {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.filtro .wrap { display: flex; gap: 8px; padding-block: 12px; overflow-x: auto; scrollbar-width: none; align-items: center; }
+.filtro .label { margin-right: 6px; white-space: nowrap; }
+.chip {
+  flex: none; font: 600 .92rem var(--font-body); color: var(--fg); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 999px; padding: 7px 15px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background-color .25s var(--curva), border-color .25s var(--curva), color .25s var(--curva);
+}
+.chip i { width: 10px; height: 10px; border-radius: 2px; background: var(--c, var(--accent)); }
+.chip:hover { border-color: var(--c, var(--accent)); }
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+/* ---------- KPIs ---------- */
+.kpis { padding-block: 28px 8px; }
+.kpis .grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.kpi {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radio);
+  padding: 18px 18px 16px; display: grid; gap: 6px; align-content: start; position: relative; overflow: hidden;
+  transition: opacity .4s var(--curva), transform .4s var(--curva);
+}
+.kpi .tag { display: flex; align-items: center; gap: 8px; }
+.kpi .tag i { width: 10px; height: 10px; border-radius: 2px; background: var(--c); flex: none; }
+.kpi .num { font-size: clamp(2rem, 3.4vw, 2.7rem); line-height: 1; }
+.kpi p { color: var(--fg-2); font-size: .95rem; line-height: 1.35; }
+.kpi::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: 100%;
+  background: var(--c); transform-origin: left; transform: scaleX(.18);
+  transition: transform .6s var(--curva);
+}
+.kpi:hover::after, .kpi.on::after { transform: scaleX(1); }
+body[data-area]:not([data-area="todas"]) .kpi:not(.on) { opacity: .4; }
+
+/* ---------- Secciones de área ---------- */
+main { padding-block: 16px 24px; }
+.area { padding-block: 36px 12px; scroll-margin-top: 70px; }
+.area[hidden] { display: none !important; }
+main { transition: opacity .35s var(--curva), transform .35s var(--curva); }
+main.saliendo { opacity: 0; transform: translateY(-10px); }
+
+/* ---------- Modo pantalla (rotación automática) ---------- */
+.filtro { position: sticky; }
+.kiosco { margin-left: auto; display: flex; gap: 8px; align-items: center; flex: none; padding-left: 12px; }
+.kiosco .paso { font: 500 .72rem var(--font-mono); letter-spacing: .12em; color: var(--fg-2); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ctrl {
+  font: 600 .86rem var(--font-body); color: var(--fg); background: transparent; border: 1px solid var(--line);
+  border-radius: 999px; padding: 6px 13px; cursor: pointer; display: inline-flex; gap: 7px; align-items: center; white-space: nowrap;
+  transition: border-color .25s var(--curva);
+}
+.ctrl:hover { border-color: var(--accent); }
+.ctrl svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.progreso { position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: transparent; overflow: hidden; }
+.progreso span { display: block; height: 100%; width: 100%; background: var(--pc, var(--accent)); transform-origin: left; transform: scaleX(0); }
+body.sin-cursor, body.sin-cursor * { cursor: none !important; }
+
+/* Pantalla grande: cada apartado es una diapositiva de 1280 px de ancho que se escala para caber entera */
+.pantalla, .pantalla body { height: 100%; overflow: hidden; }
+.pantalla body { display: flex; flex-direction: column; }
+.pantalla .top { flex: none; padding-block: 14px 8px; }
+.pantalla .filtro { flex: none; position: relative; top: auto; }
+.pantalla #stage { flex: 1; min-height: 0; position: relative; overflow: hidden; padding: 0; }
+.pantalla #stage.saliendo { transform: none; }
+.pantalla #stage .slide {
+  position: absolute; left: 50%; top: 50%; width: 1280px; margin: 0;
+  width: var(--dw, 1280px);
+  transform: translate(-50%, -50%) scale(var(--s, 1)); transform-origin: center center;
+  padding-block: 6px;
+}
+.pantalla #stage .slide .wrap { max-width: none; }
+.pantalla .overview .hero { padding-block: 0 4px; }
+.pantalla .overview .kpis { padding-block: 22px 0; }
+.pantalla .area { padding-block: 0; }
+.pantalla footer { display: none; }
+.pantalla .top .wrap, .pantalla .filtro .wrap { max-width: none; padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); }
+.pantalla .filtro .wrap { overflow: visible; }
+.pantalla .brand .usb, .pantalla .brand .sep { height: 50px; }
+.pantalla .brand .cea { height: 54px; }
+.area-head { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; align-items: center; margin-bottom: 22px; }
+.area-head .glifo { width: 44px; height: 44px; grid-row: span 2; }
+.area-head h2 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
+.area-head p { color: var(--fg-2); grid-column: 2; max-width: 68ch; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radio);
+  padding: 22px; min-width: 0;
+}
+.card h3 { font-size: 1.12rem; margin-bottom: 4px; }
+.card .sub { color: var(--fg-2); font-size: .95rem; }
+.fuente { margin-top: 14px; color: var(--fg-2); font-size: .85rem; }
+.fuente .label { margin-right: 6px; }
+.g2 { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 14px; }
+.g3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.g4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.stack { display: grid; gap: 14px; align-content: start; }
+
+/* Formación: gráfico de barras */
+.chart-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.total { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.total .num { font-size: clamp(2.6rem, 5vw, 3.8rem); line-height: .95; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; flex-wrap: wrap; }
+.seg button {
+  font: 600 .85rem var(--font-body); color: var(--fg-2); background: transparent; border: 0;
+  border-radius: 999px; padding: 6px 12px; cursor: pointer; transition: background-color .25s var(--curva), color .25s var(--curva);
+}
+.seg button[aria-pressed="true"] { background: var(--surface-2); color: var(--fg); }
+.controls { display: flex; gap: 8px; flex-wrap: wrap; }
+.bars { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; position: relative; }
+.bar {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 8px 10px; border-radius: 10px;
+  cursor: default; transition: background-color .25s var(--curva), opacity .3s var(--curva), transform .5s var(--curva);
+}
+.bar .row1 { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.bar .name { font-weight: 600; }
+.bar .val { font-family: var(--font-display); font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar .track { height: 12px; border-radius: 3px; position: relative; background: linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 25% 100%; }
+.bar .fill {
+  position: absolute; inset: 0 auto 0 0; border-radius: 3px; background: var(--formacion);
+  width: calc(var(--w) * 1%); transition: width .6s var(--curva);
+}
+.bar .det { color: var(--fg-2); font-size: .88rem; line-height: 1.35; }
+.bars:hover .bar:not(:hover), .bars:focus-within .bar:not(:focus-within) { opacity: .45; }
+.bar:hover, .bar:focus-within { background: var(--surface-2); }
+.axis { display: flex; justify-content: space-between; padding: 6px 10px 0; font: .72rem var(--font-mono); color: var(--fg-2); font-variant-numeric: tabular-nums; }
+
+.lineas { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.lineas li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; }
+.lineas .n { font: 700 .8rem var(--font-mono); color: var(--fg-2); border: 1px solid var(--line); border-radius: 8px; height: 32px; display: grid; place-items: center; }
+.lineas b { display: block; font-weight: 600; }
+.lineas span { color: var(--fg-2); font-size: .92rem; }
+.centro { margin-top: 14px; padding: 14px; border-radius: 12px; background: var(--surface-2); display: grid; gap: 4px; }
+
+/* Barras partidas (pregrado / posgrado) */
+.split { display: grid; gap: 8px; margin-top: 14px; }
+.split .track { display: flex; height: 14px; border-radius: 3px; overflow: hidden; gap: 2px; }
+.split .a, .split .b { height: 100%; transition: flex-grow .7s var(--curva); }
+.split .a { background: var(--c); }
+.split .b { background: color-mix(in srgb, var(--c) 40%, transparent); }
+.split .keys { display: flex; justify-content: space-between; gap: 10px; font-size: .9rem; color: var(--fg-2); flex-wrap: wrap; }
+.split .keys b { color: var(--fg); font-family: var(--font-display); font-variant-numeric: tabular-nums; }
+.split .keys i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; vertical-align: 1px; }
+.big { font-size: clamp(2.4rem, 4.4vw, 3.2rem); line-height: 1; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+
+.acciones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; list-style: none; margin: 0; padding: 0; }
+.acciones li {
+  border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-weight: 600;
+  display: flex; gap: 10px; align-items: center; transition: border-color .25s var(--curva);
+}
+.acciones li:hover { border-color: var(--digital); }
+.acciones svg { width: 20px; height: 20px; flex: none; stroke: var(--digital); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Gestión curricular: módulos 5 + 4 */
+.modulos { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 6px; margin-top: 14px; max-width: 420px; }
+.modulos span { aspect-ratio: 1; max-width: 100%; border-radius: 5px; background: var(--curricular); transition: transform .5s var(--curva), opacity .5s var(--curva); }
+.modulos span.u { background: transparent; border: 2px solid var(--curricular); }
+.comp { display: grid; gap: 8px; align-content: start; }
+.comp .estado { justify-self: start; font: 600 .78rem var(--font-body); border-radius: 999px; padding: 2px 10px; border: 1px solid var(--curricular); color: var(--fg); }
+.comp .ico { width: 34px; height: 34px; stroke: var(--curricular); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* IA: laboratorio y acciones */
+.hub { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 28px; align-items: center; position: relative; }
+.hub::before {
+  content: ""; position: absolute; left: 75px; right: 8px; top: 50%; height: 2px; transform: translateY(-1px);
+  background: linear-gradient(90deg, var(--ia) 0 45%, transparent 45%) 0 0 / 14px 2px repeat-x;
+  animation: flujo 1.4s linear infinite;
+}
+@keyframes flujo { to { background-position: 14px 0; } }
+.lab {
+  width: 150px; aspect-ratio: 1; max-width: 100%; border-radius: 50%; display: grid; place-items: center; text-align: center;
+  border: 2px solid var(--ia); position: relative; padding: 14px; background: var(--surface); z-index: 1;
+}
+.lab::before {
+  content: ""; position: absolute; inset: -10px; border-radius: 50%; border: 1px solid var(--ia); opacity: 0;
+  animation: pulso 2.6s var(--curva) infinite;
+}
+@keyframes pulso { 0% { transform: scale(.92); opacity: .7; } 100% { transform: scale(1.14); opacity: 0; } }
+.lab b { font-family: var(--font-display); font-size: 1.05rem; line-height: 1.15; display: block; }
+.lab svg { width: 30px; height: 30px; stroke: var(--ia); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; margin: 0 auto 6px; display: block; }
+.acc { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; position: relative; z-index: 1; }
+.acc li {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px;
+  display: grid; gap: 4px; align-content: center; min-height: 92px; position: relative;
+}
+.acc li::before { content: ""; position: absolute; left: -6px; top: 50%; width: 10px; height: 10px; margin-top: -5px; border-radius: 50%; background: var(--ia); }
+.acc li.dest { border-color: var(--ia); background: color-mix(in srgb, var(--ia) 11%, var(--surface)); }
+.acc h3 { font-size: 1rem; margin: 0; }
+.acc .tagi { justify-self: start; font: 600 .75rem var(--font-body); border: 1px solid var(--ia); border-radius: 999px; padding: 1px 9px; }
+@media (max-width: 860px) {
+  .hub { grid-template-columns: minmax(0, 1fr); justify-items: center; }
+  .hub::before { display: none; }
+  .acc { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .acc li::before { display: none; }
+}
+@media (max-width: 560px) { .acc { grid-template-columns: minmax(0, 1fr); } }
+.ia-kpis .card { display: grid; gap: 4px; align-content: start; padding-block: 16px; }
+.ia-kpis .card .num { font-size: clamp(2.4rem, 4.4vw, 3.2rem); line-height: 1; }
+.ia-kpis .card::before { content: ""; width: 28px; height: 4px; border-radius: 2px; background: var(--ia); }
+
+
+/* Formación: gráficos que se alternan (dona, mapa de áreas, barras) */
+.seg button { position: relative; }
+.seg .pg { position: absolute; left: 12px; right: 12px; bottom: 2px; height: 2px; border-radius: 2px; background: var(--formacion); transform-origin: left; transform: scaleX(0); }
+.seg .pg.run { animation: llenar 8s linear forwards; }
+@keyframes llenar { to { transform: scaleX(1); } }
+.viz { position: relative; height: 410px; }
+.viz-stage { height: 100%; transition: opacity .26s var(--curva), transform .26s var(--curva); }
+.viz-stage.out { opacity: 0; transform: scale(.98); }
+.dona { display: flex; align-items: center; gap: 28px; height: 100%; }
+.dona svg { width: 46%; max-width: 380px; height: auto; flex: none; overflow: visible; }
+.dona path { cursor: default; }
+.dc-num { font: 700 46px var(--font-display); fill: var(--fg); font-variant-numeric: tabular-nums; }
+.dc-lbl { font: 600 15px var(--font-body); fill: var(--fg-2); }
+.ley { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; flex: 1; min-width: 0; }
+.ley li { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 6px 8px; border-radius: 8px; transition: opacity .3s var(--curva), background-color .3s var(--curva); }
+.ley li.on { background: var(--surface-2); }
+.ley li.off { opacity: .4; }
+.ley i { width: 12px; height: 12px; border-radius: 3px; align-self: center; box-shadow: inset 0 0 0 1px rgba(24, 58, 67, .12); }
+.ley .n { font-weight: 600; }
+.ley .v { font-family: var(--font-display); font-weight: 700; font-variant-numeric: tabular-nums; }
+.ley .p { color: var(--fg-2); font-size: .86rem; text-align: right; font-variant-numeric: tabular-nums; }
+.mapa-t { position: relative; height: 100%; }
+.tile {
+  position: absolute; border-radius: 10px; padding: 10px 12px; color: #183a43; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 6px;
+  box-shadow: inset 0 0 0 1px rgba(24, 58, 67, .10);
+  animation: tile .7s var(--curva) both;
+}
+.tile b { font-weight: 600; font-size: .95rem; line-height: 1.2; display: block; }
+.tile .det { display: block; font-size: .82rem; line-height: 1.3; margin-top: 4px; max-width: 34ch; }
+.tile .tb { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.tile .tv { font-family: var(--font-display); font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.tile .tb small { font-size: .82rem; font-weight: 600; }
+.tile.estrecha { padding: 8px 6px; align-items: center; }
+.tile.estrecha b { writing-mode: vertical-rl; transform: rotate(180deg); font-size: .85rem; }
+.tile.estrecha .tb { flex-direction: column; align-items: center; gap: 2px; }
+.tile.estrecha .tb small { font-size: .72rem; white-space: nowrap; }
+@keyframes tile { from { opacity: 0; transform: scale(.82); } to { opacity: 1; transform: none; } }
+.viz .bars { gap: 2px; }
+.viz .bar { padding: 5px 10px; gap: 3px; }
+.viz .bar .det { font-size: .82rem; }
+
+/* Logos y espacios reservados */
+.logos { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-block: 16px 12px; }
+.logos .plus { font: 700 2.2rem/1 var(--font-display); color: var(--fg-2); }
+.logos img { height: 64px; width: auto; }
+.slot {
+  border: 1.5px dashed var(--line); border-radius: 12px; display: grid; place-items: center;
+  color: var(--fg-2); text-align: center; padding: 8px;
+}
+.slot.vac { width: 200px; height: 80px; }
+.slot.secub { width: 100%; height: 70px; }
+.slot img { max-width: 100%; max-height: 100%; }
+
+/* Educación Digital: apoyo y CIAT */
+.apoyo { margin-top: 12px; display: flex; gap: 10px; align-items: center; padding: 9px 12px; border-radius: 10px; background: var(--surface-2); font-size: .95rem; }
+.apoyo svg { width: 18px; height: 18px; flex: none; fill: none; stroke: var(--digital); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ciat .num { letter-spacing: .02em; }
+
+/* IA: protagonismo de Erasmus+ Integrity AI */
+.erasmus {
+  padding-block: 18px;
+  display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 24px; align-items: center;
+  border-color: var(--ia); background: color-mix(in srgb, var(--ia) 11%, var(--surface)); margin-bottom: 14px; overflow: hidden;
+}
+.erasmus h3 { font-family: var(--font-key); font-size: clamp(2.3rem, 4.2vw, 3.4rem); line-height: 1.02; margin-block: 10px 10px; letter-spacing: 0; }
+.erasmus .sub { font-size: 1rem; max-width: 46ch; }
+.erasmus .stat { display: flex; align-items: center; gap: 14px; margin-top: 18px; }
+.erasmus .stat .num { font-size: 3.2rem; line-height: 1; }
+.erasmus .stat b { font-family: var(--font-display); font-size: 1.15rem; display: block; }
+.erasmus .stat span.sub { font-size: .9rem; }
+.red { width: 100%; height: auto; max-width: 100%; overflow: visible; }
+.red line { stroke: var(--ia); stroke-width: 1.5; opacity: .35; }
+.red .pulso { stroke: var(--ia); stroke-width: 3; stroke-linecap: round; opacity: 1; stroke-dasharray: 6 400; animation: viaje 2.8s linear infinite; }
+@keyframes viaje { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -406; } }
+.red .n0 { fill: var(--ia); }
+.red .nd { fill: var(--surface); stroke: var(--ia); stroke-width: 2; }
+.red .halo { fill: none; stroke: var(--ia); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: halo 2.8s var(--curva) infinite; }
+@keyframes halo { from { transform: scale(.6); opacity: .8; } to { transform: scale(1.9); opacity: 0; } }
+.hub .nodo .tagi { display: inline-block; margin-top: 6px; font: 600 .75rem var(--font-body); border: 1px solid var(--ia); border-radius: 999px; padding: 1px 9px; }
+
+@media (max-width: 860px) { .erasmus { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) {
+  .viz { height: auto; }
+  .viz-stage.v-mapa { height: 440px; }
+  .dona { flex-direction: column; align-items: stretch; }
+  .dona svg { width: 78%; align-self: center; }
+}
+
+.g2.form { grid-template-columns: minmax(0, 2.15fr) minmax(0, 1fr); }
+@media (max-width: 860px) { .g2.form { grid-template-columns: minmax(0, 1fr); } }
+.g2.form .viz { height: 480px; }
+.g2.form .dona svg { width: 52%; max-width: 490px; }
+.g2.form .ley li { padding-block: 8px; font-size: 1.05rem; }
+@media (max-width: 560px) { .g2.form .viz { height: auto; } }
+
+
+/* Educación Digital: carrusel de proyectos interinstitucionales */
+.proy { display: grid; gap: 10px; align-content: start; }
+.proy-top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.proy-n b { color: var(--fg); font-family: var(--font-display); }
+.proy-body { position: relative; height: 172px; overflow: hidden; }
+.pj { position: absolute; inset: 0; display: grid; gap: 8px; align-content: start; transition: opacity .5s var(--curva), transform .5s var(--curva); }
+.pj.entra { opacity: 0; transform: translateY(16px); }
+.pj.sale { opacity: 0; transform: translateY(-16px); }
+.pj .cli { font: 700 1.65rem/1.1 var(--font-display); letter-spacing: -.01em; text-wrap: balance; }
+.pj .tit { font-weight: 600; line-height: 1.3; }
+.pj .meta { display: flex; gap: 6px; flex-wrap: wrap; }
+.pj .pill.temas { border-color: var(--digital); }
+.proy-dots { display: flex; gap: 5px; }
+.proy-dots span { flex: 1; height: 6px; border-radius: 2px; background: var(--line); position: relative; overflow: hidden; }
+.proy-dots span.hecho { background: color-mix(in srgb, var(--digital) 45%, transparent); }
+.proy-dots span.on::after { content: ""; position: absolute; inset: 0; background: var(--digital); transform-origin: left; transform: scaleX(0); animation: llenar 3.6s linear forwards; }
+
+
+/* Educación Digital e IA compactos para que se vean más grandes en pantalla */
+.dig1 .big { font-size: clamp(2.4rem, 4vw, 3rem); }
+.dig2 { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); }
+.dig2 .acciones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.dig2 .acciones li { padding: 10px 12px; }
+.ia1 { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 14px; margin-bottom: 14px; }
+.ia1 .erasmus { margin-bottom: 0; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
+.ia1 .ia-kpis { display: grid; gap: 10px; }
+.ia1 .ia-kpis .card { grid-template-columns: auto minmax(0, 1fr); column-gap: 16px; row-gap: 2px; align-items: center; padding: 14px 18px; }
+.ia1 .ia-kpis .card::before { display: none; }
+.ia1 .ia-kpis .card .num { grid-row: span 2; font-size: 2.6rem; min-width: 3.2ch; }
+@media (max-width: 860px) {
+  .ia1, .dig2 { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) { .dig2 .acciones { grid-template-columns: minmax(0, 1fr); } }
+
+
+/* Logos de Integrity AI y Erasmus+ (Unión Europea) */
+.aliados { position: relative; display: grid; place-items: center; min-height: 230px; }
+.aliados .red { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none !important; opacity: .55; }
+.placa {
+  position: relative; z-index: 1; background: #ffffff; border-radius: 14px; padding: 16px 26px;
+  display: grid; justify-items: center; gap: 14px; border: 1px solid var(--line);
+  animation: placa 4s var(--curva) infinite alternate;
+}
+@keyframes placa { from { transform: translateY(-3px); } to { transform: translateY(3px); } }
+.placa .l-integrity { width: 170px; height: auto; display: block; }
+.placa .l-ue { width: 200px; height: auto; display: block; }
+
+
+/* Formación Docente más grande: gráfico a todo el ancho */
+.form { display: grid; gap: 14px; }
+.form .viz { height: 470px; }
+.form .chart-head { margin-bottom: 10px; }
+.form .dona { gap: 48px; }
+.form .dona svg { width: 40%; max-width: 470px; }
+.form .ley { gap: 4px; }
+.form .ley li { padding: 9px 14px; font-size: 1.25rem; }
+.form .ley .v { font-size: 1.45rem; }
+.form .ley i { width: 16px; height: 16px; }
+.form .ley li { grid-template-columns: 16px minmax(0, 1fr) auto; }
+.form .tile b { font-size: 1.1rem; }
+.form .tile .det { font-size: .92rem; }
+.form .viz .bar .name { font-size: 1.1rem; }
+.form .viz .bar .val { font-size: 1.2rem; }
+.form .viz .bar .track { height: 16px; }
+.lineas-card { padding-block: 16px; }
+.lc-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.lineas.l4 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.lineas.l4 li { grid-template-columns: 36px 1fr; gap: 10px; }
+@media (max-width: 860px) { .lineas.l4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .lineas.l4 { grid-template-columns: minmax(0, 1fr); } .form .viz { height: auto; } .form .dona svg { width: 78%; } }
+
+/* Logo SECUB */
+.secub-logo { width: 100%; max-width: 240px; height: auto; display: block; margin-block: 6px 4px; }
+
+
+/* Pantalla grande: Formación Docente prioriza el gráfico */
+.pantalla #sec-formacion .area-head { margin-bottom: 12px; }
+.pantalla #sec-formacion .area-head p { display: none; }
+.pantalla #sec-formacion .area-head .glifo { grid-row: auto; }
+.pantalla .form .viz { height: 540px; }
+.pantalla .form .dona svg { width: 44%; max-width: 540px; }
+.pantalla .lineas-card { padding-block: 12px; }
+.pantalla .lineas-card .lc-head { margin-bottom: 8px; }
+.pantalla .lineas.l4 li span:not(.n) { display: none; }
+.pantalla .lineas.l4 li { align-items: center; }
+.pantalla .lineas.l4 b { font-size: 1.05rem; }
+
+
+/* Formación Docente: dos bloques de gráficos */
+.duo .viz .bar { padding: 3px 8px; gap: 2px; }
+.duo .viz .bar .track { height: 12px; }
+.duo .viz .bars { gap: 0; }
+.duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.blk { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; min-width: 0; }
+.blk-h { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; min-height: 36px; }
+.form .viz, .pantalla .form .viz { height: 450px; }
+.form .vizA .dona { gap: 28px; }
+.form .vizA .dona svg, .pantalla .form .vizA .dona svg { width: 50%; max-width: 420px; }
+.form .vizA .ley li { font-size: 1.15rem; padding: 8px 10px; }
+.form .vizA .ley .v { font-size: 1.3rem; }
+@media (max-width: 1020px) { .duo { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .form .viz { height: auto; } .viz-stage.v-mapa { height: 420px; } }
+
+
+/* Cinco líneas del plan y lienzos más anchos en pantalla */
+.lineas.l5 { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.lineas.l5 li { grid-template-columns: 36px 1fr; gap: 10px; }
+.pantalla .lineas.l5 li span:not(.n) { display: none; }
+.pantalla .lineas.l5 li { align-items: center; }
+.pantalla .lineas.l5 b { font-size: 1.1rem; }
+@media (max-width: 1020px) { .lineas.l5 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .lineas.l5 { grid-template-columns: minmax(0, 1fr); } }
+
+
+/* VAC */
+.vac-plate { display: inline-grid; place-items: center; padding: 12px 18px; border-radius: 12px; background: #0d2227; }
+.vac-plate img { height: 62px; width: auto; display: block; }
+
+/* IA: apuestas del CEA */
+.ia1 { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); }
+.aliados { min-height: 0; }
+.apuestas { display: grid; gap: 10px; align-content: start; padding-block: 16px; }
+.ap-head { display: grid; gap: 8px; }
+.ap-kpis { display: flex; gap: 18px; flex-wrap: wrap; color: var(--fg-2); font-size: .92rem; align-items: baseline; }
+.ap-kpis b { color: var(--fg); font-size: 1.9rem; line-height: 1; margin-right: 4px; }
+.ap-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.ap-list .r1 { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.ap-list .nm { font-weight: 600; font-size: .92rem; line-height: 1.25; min-width: 0; }
+.ap-list .nm small { font-weight: 400; color: var(--fg-2); font-size: .78rem; margin-left: 4px; white-space: nowrap; }
+.ap-list .q { font-family: var(--font-display); font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ap-list .q small { font-family: var(--font-body); font-weight: 400; color: var(--fg-2); font-size: .75rem; }
+.ap-list .tr { height: 7px; border-radius: 3px; background: var(--line); overflow: hidden; margin-top: 3px; }
+.ap-list .fl { display: block; height: 100%; width: 0; border-radius: 3px; background: var(--ia); transition: width .7s var(--curva); }
+.ap-list li.e .fl { background: color-mix(in srgb, var(--ia) 45%, transparent); }
+.ap-list li.dest .nm { color: var(--fg); }
+.ap-list li.dest .nm::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--ia); margin-right: 6px; vertical-align: 1px; }
+.ap-ley { display: flex; gap: 16px; font-size: .8rem; color: var(--fg-2); }
+.ap-ley i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.ap-ley .kf { background: var(--ia); }
+.ap-ley .ke { background: color-mix(in srgb, var(--ia) 45%, transparent); }
+
+.ia1 .ia-kpis .card { grid-template-columns: auto minmax(0, 1fr); align-content: center; }
+.ia1 .ia-kpis .card .num { grid-row: auto; font-size: 3rem; }
+.ia1 .ia-kpis .card b { font-family: var(--font-display); font-size: 1.25rem; }
+
+.ia1 .ia-kpis .card.tipos { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); row-gap: 10px; }
+.tipos .tp { display: flex; align-items: center; gap: 14px; }
+.tipos .tp .num { font-size: 3rem !important; line-height: 1; min-width: 0 !important; }
+.tipos .mods { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.tipos .mods span { height: 10px; border-radius: 3px; background: var(--ia); }
+.tipos .mods span.e { background: color-mix(in srgb, var(--ia) 40%, transparent); }
+.tipos .tp:last-of-type .num { color: var(--fg); }
+.ia1 .ia-kpis { gap: 8px; }
+.ia1 .ia-kpis .card { padding-block: 10px; }
+
+.ia1 .ia-kpis .card.inic { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; align-content: start; }
+.inic .in-h { display: flex; align-items: center; gap: 14px; }
+.inic .in-h .num { font-size: 3rem; line-height: 1; min-width: 0 !important; }
+.inic .in-h b { font-family: var(--font-display); font-size: 1.25rem; }
+.inic .in-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.inic .in-n { color: var(--fg); font-family: var(--font-display); font-size: 1rem; margin-right: 2px; }
+.inic ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.inic li { position: relative; padding-left: 16px; font-size: .95rem; line-height: 1.3; }
+.inic li::before { content: ""; position: absolute; left: 0; top: .42em; width: 8px; height: 8px; border-radius: 2px; background: var(--ia); }
+.inic .ev li::before { background: color-mix(in srgb, var(--ia) 40%, transparent); }
+.inic li.dest { font-weight: 600; }
+@media (max-width: 560px) { .inic .in-cols { grid-template-columns: minmax(0, 1fr); } }
+
+.inic .in-h { flex-wrap: wrap; }
+.inic .in-tot { margin-left: auto; color: var(--fg-2); font-size: .95rem; }
+.inic .in-tot b { color: var(--fg); font-family: var(--font-display); font-size: 1.15rem; }
+.inic .in-body { position: relative; height: 112px; overflow: hidden; }
+.inic .pj .cli { font-size: 1.6rem; }
+.inic .pill.tipo { border-color: var(--ia); }
+.inic .pill.ev { border-color: color-mix(in srgb, var(--ia) 45%, transparent); }
+.in-dots { display: flex; gap: 5px; }
+.in-dots span { flex: 1; height: 6px; border-radius: 2px; background: var(--line); position: relative; overflow: hidden; }
+.in-dots span.hecho { background: color-mix(in srgb, var(--ia) 45%, transparent); }
+.in-dots span.on::after { content: ""; position: absolute; inset: 0; background: var(--ia); transform-origin: left; transform: scaleX(0); animation: llenar 3s linear forwards; }
+
+/* Correcciones para pantallas angostas (van al final para ganar la cascada) */
+@media (max-width: 860px) {
+  .ia1, .ia1 .erasmus { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .form .vizA .dona svg { width: 78%; }
+  .inic .in-tot { margin-left: 0; }
+}
+
+/* Resumen: cifras más protagonistas */
+.overview .hero h1 { font-size: clamp(2rem, 3.6vw, 3rem); margin-block: 0 14px; }
+.overview .hero .wrap { gap: 32px; }
+.overview .period { margin-top: 6px; }
+.overview .kpis { padding-block: 28px 0; }
+.overview .kpis .grid { gap: 16px; }
+.overview .kpi { padding: 26px 24px 24px; gap: 10px; }
+.overview .kpi .num { font-size: clamp(2.8rem, 5vw, 4.4rem); }
+.overview .kpi p { font-size: 1.1rem; }
+.overview .kpi .tag .label { font-size: .8rem; }
+.overview .kpi::after { height: 4px; }
+.overview .kpi { grid-template-rows: auto auto 1fr; }
+.overview .kpi .tag { min-height: 2.6em; align-items: flex-start; }
+.overview .kpi .tag i { margin-top: 3px; }
+.pantalla .overview .kpi { min-height: 300px; }
+.pantalla .overview .kpi .num { font-size: 5.2rem; }
+.pantalla .overview .kpi p { font-size: 1.2rem; }
+.pantalla .overview .kpis { padding-top: 36px; }
+
+.blk-t { font-family: var(--font-display); font-size: 1.2rem; margin: 0; }
+
+/* IA: Internacionalización destacada */
+.erasmus .stat.intl {
+  margin-top: 20px; padding: 14px 20px; border-radius: 14px; gap: 16px; align-items: center;
+  background: color-mix(in srgb, var(--ia) 22%, transparent); border: 1px solid var(--ia);
+}
+.erasmus .stat.intl .globo { width: 40px; height: 40px; flex: none; fill: none; stroke: var(--fg); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; animation: girar 12s linear infinite; }
+@keyframes girar { to { transform: rotate(360deg); } }
+.erasmus .stat.intl .num { font-size: 3.6rem; }
+.erasmus .stat.intl b.key { font-family: var(--font-key); font-size: 1.9rem; line-height: 1.05; letter-spacing: .01em; }
+.erasmus .stat.intl .sub { display: block; margin-top: 4px; font-size: .95rem; color: var(--fg); opacity: .85; }
+
+.erasmus .stat.intl { margin-top: 0; margin-bottom: 18px; }
+
+/* Tarjeta Erasmus+: franja de internacionalización arriba, proyecto y logos abajo */
+.ia1 .erasmus { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); row-gap: 22px; column-gap: 28px; align-items: center; }
+.erasmus > .stat.intl { grid-column: 1 / -1; margin: 0; padding: 16px 24px; }
+.erasmus > .stat.intl > div { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
+.erasmus > .stat.intl .sub { margin-top: 0; font-size: 1.05rem; }
+.erasmus .er-txt { display: grid; gap: 6px; align-content: center; }
+.erasmus .er-txt h3 { margin-block: 2px 6px; }
+.erasmus .aliados { justify-self: center; }
+@media (max-width: 860px) { .ia1 .erasmus { grid-template-columns: minmax(0, 1fr); } }
+
+/* Títulos de tarjeta más visibles */
+.card .label, .blk .label, .kpi .label, .lc-head .label {
+  color: var(--fg); font-weight: 700; font-size: .86rem; letter-spacing: .12em;
+}
+.pantalla .card .label, .pantalla .kpi .label { font-size: .95rem; }
+.fuente .label { color: var(--fg); font-weight: 700; }
+
+.total .nota { font-size: 1.05rem; color: var(--fg); opacity: .85; max-width: 46ch; line-height: 1.3; }
+
+.overview .kpis .fuente { margin-top: 18px; }
+
+/* ---------- Pie ---------- */
+footer { border-top: 1px solid var(--line); margin-top: 24px; padding-block: 24px 36px; color: var(--fg-2); font-size: .92rem; }
+footer .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: start; }
+footer p + p { margin-top: 6px; }
+footer .mail { color: var(--fg); font-weight: 600; user-select: all; }
+footer .firma { display: flex; align-items: center; gap: 10px; }
+footer .firma svg { width: 28px; height: 28px; }
+
+/* ---------- Entradas animadas ---------- */
+.reveal { animation: subir .6s var(--curva) both; animation-delay: calc(var(--i, 0) * 70ms); }
+@keyframes subir { from { opacity: .3; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.symbol.ensamblar .piece path { animation: ensamblar 1.4s var(--curva) both; }
+.symbol.ensamblar [data-area="formacion"] path { --dx: 0px; --dy: -46px; animation-delay: .05s; }
+.symbol.ensamblar [data-area="curricular"] path { --dx: -40px; --dy: 30px; animation-delay: .18s; }
+.symbol.ensamblar [data-area="digital"] path { --dx: 44px; --dy: 40px; animation-delay: .31s; }
+.symbol.ensamblar [data-area="inteligencia"] path { --dx: -50px; --dy: 0px; animation-delay: .44s; }
+@keyframes ensamblar { from { transform: translate(var(--dx), var(--dy)); opacity: 0; } to { transform: none; opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1020px) {
+  .kpis .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .hero .wrap, .g2 { grid-template-columns: minmax(0, 1fr); }
+  .g3, .acciones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .kpis .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpis .grid .kpi:first-child { grid-column: 1 / -1; }
+  .g3, .g4, .acciones { grid-template-columns: minmax(0, 1fr); }
+  .mapa { grid-template-columns: minmax(0, 1fr); justify-items: start; }
+  .symbol { max-width: 170px; }
+  .brand .usb { height: 34px; } .brand .sep { height: 34px; } .brand .cea { height: 40px; }
+  footer .wrap { grid-template-columns: minmax(0, 1fr); }
+  .card { padding: 18px; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <img class="usb night-only" src="assets/img/logo-usb-blanco.svg" alt="Universidad de San Buenaventura">
+      <img class="usb day-only" src="assets/img/logo-usb-color.svg" alt="Universidad de San Buenaventura">
+      <span class="sep" aria-hidden="true"></span>
+      <img class="cea night-only" src="assets/img/cea-horizontal-noche.svg" alt="CEA · Centro de Innovación Pedagógica y Educación Digital">
+      <img class="cea day-only" src="assets/img/cea-horizontal-color.svg" alt="CEA · Centro de Innovación Pedagógica y Educación Digital">
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Cambiar entre modo noche y modo día">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <span id="themeLbl">Modo día</span>
+    </button>
+  </div>
+</header>
+
+<nav class="filtro" aria-label="Filtrar por área">
+  <div class="wrap">
+
+    <button class="chip" type="button" data-go="todas" aria-pressed="true">Resumen</button>
+    <button class="chip" type="button" data-go="formacion" aria-pressed="false" style="--c:var(--formacion)"><i></i>Formación Docente</button>
+    <button class="chip" type="button" data-go="curricular" aria-pressed="false" style="--c:var(--curricular)"><i></i>Gestión Curricular</button>
+    <button class="chip" type="button" data-go="digital" aria-pressed="false" style="--c:var(--digital)"><i></i>Educación Digital</button>
+    <button class="chip" type="button" data-go="ia" aria-pressed="false" style="--c:var(--ia)"><i></i>Inteligencia Artificial</button>
+    <div class="kiosco">
+      <span class="paso" id="paso" aria-live="off">1 / 5</span>
+      <button class="ctrl" id="playBtn" type="button" aria-pressed="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true" id="playIco"><path d="M8 5v14M16 5v14"/></svg><span id="playLbl">Pausar rotación</span>
+      </button>
+      <button class="ctrl" id="fsBtn" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>Pantalla completa
+      </button>
+    </div>
+  </div>
+  <div class="progreso" aria-hidden="true"><span id="barra"></span></div>
+</nav>
+
+<main id="stage">
+<div class="slide overview" id="sec-todas" data-area="todas" data-ancho="1500" style="--dw:1500px">
+<section class="hero">
+  <div class="wrap">
+    <div class="reveal" style="--i:0">
+      <h1><span class="key">Cifras de impacto</span> del Centro de Innovación Pedagógica y Educación Digital</h1>
+      <div class="period">
+        <span class="pill">Formación docente: 2021 al 2026-2</span>
+
+      </div>
+    </div>
+    <div class="mapa reveal" id="mapa" style="--i:2" data-active="todas">
+      <svg class="symbol ensamblar" id="symbol" viewBox="-40 -40 240 240" role="group" aria-label="Símbolo del CEA: cada pieza es un área. Selecciona una para filtrar." data-active="todas">
+        <g class="piece" data-area="formacion" tabindex="0" role="button" aria-label="Formación Docente"><path fill="var(--p-formacion)" d="M43.20 30.40L43.20 9.60A6.40 6.40 0 0 1 49.60 3.20L150.40 3.20A6.40 6.40 0 0 1 156.80 9.60L156.80 70.40A6.40 6.40 0 0 1 150.40 76.80L129.60 76.80A6.40 6.40 0 0 1 123.20 70.40L123.20 40.00A3.20 3.20 0 0 0 120.00 36.80L49.60 36.80A6.40 6.40 0 0 1 43.20 30.40Z"/></g>
+        <g class="piece" data-area="curricular" tabindex="0" role="button" aria-label="Gestión Curricular"><path fill="var(--p-curricular)" d="M43.20 150.40L43.20 49.60A6.40 6.40 0 0 1 49.60 43.20L110.40 43.20A6.40 6.40 0 0 1 116.80 49.60L116.80 70.40A6.40 6.40 0 0 1 110.40 76.80L80.00 76.80A3.20 3.20 0 0 0 76.80 80.00L76.80 150.40A6.40 6.40 0 0 1 70.40 156.80L49.60 156.80A6.40 6.40 0 0 1 43.20 150.40Z"/></g>
+        <g class="piece" data-area="digital" tabindex="0" role="button" aria-label="Educación Digital"><path fill="var(--p-digital)" d="M83.20 150.40L83.20 89.60A6.40 6.40 0 0 1 89.60 83.20L150.40 83.20A6.40 6.40 0 0 1 156.80 89.60L156.80 150.40A6.40 6.40 0 0 1 150.40 156.80L89.60 156.80A6.40 6.40 0 0 1 83.20 150.40Z"/></g>
+        <g class="piece" data-area="inteligencia" tabindex="0" role="button" aria-label="Inteligencia Artificial"><path fill="var(--p-ia)" d="M3.20 150.40L3.20 9.60A6.40 6.40 0 0 1 9.60 3.20L30.40 3.20A6.40 6.40 0 0 1 36.80 9.60L36.80 150.40A6.40 6.40 0 0 1 30.40 156.80L9.60 156.80A6.40 6.40 0 0 1 3.20 150.40Z"/></g>
+      </svg>
+      <ul class="leyenda">
+        <li><button type="button" data-go="formacion" aria-pressed="false"><span class="sw" style="background:var(--p-formacion)"></span><span>Formación Docente<small>Desarrollo profesoral y acompañamiento pedagógico</small></span></button></li>
+        <li><button type="button" data-go="curricular" aria-pressed="false"><span class="sw" style="background:var(--p-curricular)"></span><span>Gestión Curricular<small>Diseño, evaluación e innovación curricular</small></span></button></li>
+        <li><button type="button" data-go="digital" aria-pressed="false"><span class="sw" style="background:var(--p-digital)"></span><span>Educación Digital<small>Ambientes virtuales de aprendizaje</small></span></button></li>
+        <li><button type="button" data-go="ia" aria-pressed="false"><span class="sw" style="background:var(--p-ia)"></span><span>Inteligencia Artificial<small>Integración ética y crítica de la IA</small></span></button></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section class="kpis" aria-label="Cifras clave">
+  <div class="wrap grid">
+    <article class="kpi reveal" data-k="formacion" style="--c:var(--formacion);--i:3">
+      <div class="tag"><i></i><span class="label">Formación Docente</span></div>
+      <span class="num" data-count="1863">1.863</span>
+      <p>participaciones docentes, 2021 al 2026-2. Incluye docentes que repitieron.</p>
+    </article>
+    <article class="kpi reveal" data-k="curricular" style="--c:var(--curricular);--i:4">
+      <div class="tag"><i></i><span class="label">Gestión Curricular</span></div>
+      <span class="num"><span data-count="5">5</span> + <span data-count="4">4</span></span>
+      <p>facultades y unidades académicas integran el Comité Curricular</p>
+    </article>
+    <article class="kpi reveal" data-k="digital" style="--c:var(--digital);--i:5">
+      <div class="tag"><i></i><span class="label">Educación Digital</span></div>
+      <span class="num" data-count="219">219</span>
+      <p>cursos virtualizados de pregrado y posgrado</p>
+    </article>
+    <article class="kpi reveal" data-k="digital" style="--c:var(--digital);--i:6">
+      <div class="tag"><i></i><span class="label">Educación Digital</span></div>
+      <span class="num" data-count="17">17</span>
+      <p>programas virtuales: 3 de pregrado y 14 de posgrado</p>
+    </article>
+    <article class="kpi reveal" data-k="ia" style="--c:var(--ia);--i:7">
+      <div class="tag"><i></i><span class="label">Inteligencia Artificial</span></div>
+      <span class="num" data-count="257">257</span>
+      <p>certificaciones en iniciativas de IA del CEA</p>
+    </article>
+  </div>
+  <div class="wrap"><p class="fuente"><span class="label">Fuente</span>Informe interno del CEA.</p></div>
+</section>
+</div>
+  <!-- ============ FORMACIÓN DOCENTE ============ -->
+  <section class="area slide" id="sec-formacion" data-area="formacion" data-ancho="1640" style="--dw:1640px">
+    <div class="wrap">
+      <div class="area-head reveal" style="--i:8">
+        <svg class="glifo" viewBox="40 0 120 80" aria-hidden="true"><path fill="var(--p-formacion)" d="M43.20 30.40L43.20 9.60A6.40 6.40 0 0 1 49.60 3.20L150.40 3.20A6.40 6.40 0 0 1 156.80 9.60L156.80 70.40A6.40 6.40 0 0 1 150.40 76.80L129.60 76.80A6.40 6.40 0 0 1 123.20 70.40L123.20 40.00A3.20 3.20 0 0 0 120.00 36.80L49.60 36.80A6.40 6.40 0 0 1 43.20 30.40Z"/></svg>
+        <h2>Formación Docente</h2>
+        <p>Desarrollo profesoral con formación continua y acompañamiento pedagógico.</p>
+      </div>
+      <div class="form">
+        <div class="card lineas-card reveal" style="--i:9">
+          <div class="lc-head"><span class="label">Líneas del Plan de Formación</span></div>
+          <ol class="lineas l5">
+            <li><span class="n">01</span><div><b>Tecnología e Innovación</b><span>Diplomado en competencias digitales con IA</span></div></li>
+            <li><span class="n">02</span><div><b>Pedagogía y Didáctica</b><span>Diplomado en Innovación Pedagógica y Mediación Tecnológica</span></div></li>
+            <li><span class="n">03</span><div><b>Desarrollo humano</b><span>Aprendizaje socioemocional</span></div></li>
+            <li><span class="n">04</span><div><b>Curricular</b><span>Diplomado en Gestión Curricular</span></div></li>
+            <li><span class="n">05</span><div><b>Lengua Extranjera</b><span>Diplomado ¡Speak Up!</span></div></li>
+          </ol>
+        </div>
+        <div class="card reveal" style="--i:10">
+          <div class="chart-head">
+            <div>
+              <span class="label">Participaciones docentes por línea estratégica</span>
+              <div class="total"><span class="num" data-count="1863">1.863</span><span class="nota">participaciones docentes. Algunos docentes participaron en varias formaciones.</span></div>
+            </div>
+          </div>
+          <div class="duo">
+            <div class="blk">
+              <div class="blk-h"><h3 class="blk-t">Distribución del total por línea</h3></div>
+              <div class="viz vizA" id="vizA"></div>
+            </div>
+            <div class="blk">
+              <div class="blk-h">
+                <h3 class="blk-t">Comparativo entre líneas estratégicas</h3>
+                <div class="seg" role="group" aria-label="Tipo de gráfico">
+                  <button type="button" data-viz="mapa" aria-pressed="true">Mapa de áreas<span class="pg"></span></button>
+                  <button type="button" data-viz="barras" aria-pressed="false">Barras<span class="pg"></span></button>
+                </div>
+              </div>
+              <div class="viz" id="viz"></div>
+            </div>
+          </div>
+          <p class="fuente"><span class="label">Fuente</span>Informe interno del CEA.</p>
+        </div>
+              </div>
+    </div>
+  </section>
+
+  <!-- ============ GESTIÓN CURRICULAR ============ -->
+  <section class="area slide" id="sec-curricular" data-area="curricular">
+    <div class="wrap">
+      <div class="area-head reveal" style="--i:11">
+        <svg class="glifo" viewBox="40 40 80 120" aria-hidden="true"><path fill="var(--p-curricular)" d="M43.20 150.40L43.20 49.60A6.40 6.40 0 0 1 49.60 43.20L110.40 43.20A6.40 6.40 0 0 1 116.80 49.60L116.80 70.40A6.40 6.40 0 0 1 110.40 76.80L80.00 76.80A3.20 3.20 0 0 0 76.80 80.00L76.80 150.40A6.40 6.40 0 0 1 70.40 156.80L49.60 156.80A6.40 6.40 0 0 1 43.20 150.40Z"/></svg>
+        <h2>Gestión Curricular</h2>
+        <p>Acompañamiento y articulación del currículo en la San Buenaventura.</p>
+      </div>
+      <div class="g2" style="margin-bottom:14px">
+        <div class="card reveal" style="--i:12">
+          <span class="label">Liderazgo</span>
+          <div class="logos">
+            <span class="vac-plate"><img src="assets/img/logo-vac.png" alt="Vicerrectoría Académica"></span>
+            <span class="plus" aria-hidden="true">+</span>
+            <img class="night-only" src="assets/img/cea-simple-noche.svg" alt="CEA">
+            <img class="day-only" src="assets/img/cea-simple-color.svg" alt="CEA">
+          </div>
+          <p class="sub">Vicerrectoría Académica en coordinación con el CEA</p>
+        </div>
+        <div class="card reveal" style="--i:13">
+          <span class="label">Comité Curricular</span>
+          <div class="total" style="margin-top:8px"><span class="num big"><span data-count="5">5</span> + <span data-count="4">4</span></span></div>
+          <div class="modulos" id="modulos" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span class="u"></span><span class="u"></span><span class="u"></span><span class="u"></span>
+          </div>
+          <div class="split"><div class="keys"><span><i style="background:var(--curricular)"></i>Facultades <b>5</b></span><span><i style="border:2px solid var(--curricular)"></i>Unidades académicas <b>4</b></span></div></div>
+        </div>
+      </div>
+      <div class="g4">
+        <div class="card comp reveal" style="--i:14">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/></svg>
+          <h3>Ruta de Acompañamiento Curricular</h3>
+          <p class="sub">Pregrado y posgrado</p>
+        </div>
+        <div class="card comp reveal" style="--i:15">
+          <img class="secub-logo" src="assets/img/logo-secub.png" alt="SECUB · Sistema de Evaluación Curricular Bonaventuriano">
+          <span class="estado">En desarrollo</span>
+        </div>
+        <div class="card comp reveal" style="--i:16">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5zM7 11v5c3 2 7 2 10 0v-5"/></svg>
+          <h3>Modelo Pedagógico Corporativo</h3>
+          <p class="sub">Participación en su construcción</p>
+        </div>
+        <div class="card comp reveal" style="--i:17">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6zM9 9h6M9 13h6M9 17h4"/></svg>
+          <h3>Lineamientos Curriculares</h3>
+          <p class="sub">Marco institucional de referencia</p>
+        </div>
+      </div>
+      <p class="fuente"><span class="label">Fuente</span>Informe interno del CEA.</p>
+    </div>
+  </section>
+
+  <!-- ============ EDUCACIÓN DIGITAL ============ -->
+  <section class="area slide" id="sec-digital" data-area="digital" data-ancho="1560" style="--dw:1560px">
+    <div class="wrap">
+      <div class="area-head reveal" style="--i:18">
+        <svg class="glifo" viewBox="80 80 80 80" aria-hidden="true"><path fill="var(--p-digital)" d="M83.20 150.40L83.20 89.60A6.40 6.40 0 0 1 89.60 83.20L150.40 83.20A6.40 6.40 0 0 1 156.80 89.60L156.80 150.40A6.40 6.40 0 0 1 150.40 156.80L89.60 156.80A6.40 6.40 0 0 1 83.20 150.40Z"/></svg>
+        <h2>Educación Digital</h2>
+        <p>Acompañamiento y virtualización: promueve la transformación digital y fortalece los ambientes virtuales de aprendizaje.</p>
+      </div>
+      <div class="g4 dig1" style="margin-bottom:14px">
+        <div class="card reveal" style="--c:var(--digital);--i:19">
+          <span class="label">Cursos virtualizados</span>
+          <p class="num big" style="margin-top:8px" data-count="219">219</p>
+          <div class="split">
+            <div class="track" role="img" aria-label="144 de pregrado y 75 de posgrado"><span class="a" data-grow="144"></span><span class="b" data-grow="75"></span></div>
+            <div class="keys"><span><i style="background:var(--digital)"></i>Pregrado <b>144</b> · 65,8 %</span><span><i style="background:color-mix(in srgb, var(--digital) 40%, transparent)"></i>Posgrado <b>75</b> · 34,2 %</span></div>
+          </div>
+        </div>
+        <div class="card reveal" style="--c:var(--digital);--i:20">
+          <span class="label">Programas virtuales</span>
+          <p class="num big" style="margin-top:8px" data-count="17">17</p>
+          <div class="split">
+            <div class="track" role="img" aria-label="3 de pregrado y 14 de posgrado"><span class="a" data-grow="3"></span><span class="b" data-grow="14"></span></div>
+            <div class="keys"><span><i style="background:var(--digital)"></i>Pregrado <b>3</b></span><span><i style="background:color-mix(in srgb, var(--digital) 40%, transparent)"></i>Posgrado <b>14</b></span></div>
+          </div>
+        </div>
+        <div class="card reveal" style="--i:21">
+          <span class="label">Plataformas</span>
+          <p class="num big" style="margin-top:8px" data-count="3">3</p>
+          <div class="tags"><span class="pill">Mi Campus</span><span class="pill">E Campus</span><span class="pill">Mi Campus Medellín</span></div>
+        </div>
+        <div class="card reveal" style="--i:22">
+          <span class="label">Modalidades</span>
+          <p class="num big" style="margin-top:8px" data-count="3">3</p>
+          <div class="tags"><span class="pill">Presencial</span><span class="pill">Virtual</span><span class="pill">Híbrida</span></div>
+        </div>
+        </div>
+      <div class="g2 dig2">
+        <div class="card proy reveal" style="--i:23">
+          <div class="proy-top"><span class="label">Trabajo interinstitucional</span><span class="label proy-n"><b id="proyN">1</b> / 9 proyectos</span></div>
+          <div class="proy-body" id="proy" aria-live="polite"></div>
+          <div class="proy-dots" id="proyDots" aria-hidden="true"></div>
+        </div>
+        <div class="card reveal" style="--i:24">
+        <span class="label">Líneas de acción</span>
+        <ul class="acciones" style="margin-top:12px">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Virtualización</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L8 21l4-2 4 2-1-7.5"/></svg>Gestión de cursos</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M14 15c3 0 8 1 8 5"/></svg>Docentes, estudiantes y administrativos</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Podcast: El Mecato</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6zM9 13l2 2 4-4"/></svg>Proyecto PROF XXI</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-5h6v5"/></svg>Atención al sector externo</li>
+        </ul>
+        </div>
+      </div>
+      <p class="fuente"><span class="label">Fuente</span>Informe interno del CEA.</p>
+    </div>
+  </section>
+
+  <!-- ============ INTELIGENCIA ARTIFICIAL ============ -->
+  <section class="area slide" id="sec-ia" data-area="ia" data-ancho="1520" style="--dw:1520px">
+    <div class="wrap">
+      <div class="area-head reveal" style="--i:25">
+        <svg class="glifo" viewBox="0 0 40 160" aria-hidden="true"><path fill="var(--p-ia)" d="M3.20 150.40L3.20 9.60A6.40 6.40 0 0 1 9.60 3.20L30.40 3.20A6.40 6.40 0 0 1 36.80 9.60L36.80 150.40A6.40 6.40 0 0 1 30.40 156.80L9.60 156.80A6.40 6.40 0 0 1 3.20 150.40Z"/></svg>
+        <h2>Inteligencia Artificial</h2>
+        <p>Gobernanza, formación y uso ético de la inteligencia artificial.</p>
+      </div>
+      <div class="ia1">
+      <div class="card erasmus reveal" style="--i:26">
+        <div class="stat intl">
+            <svg class="globo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+            <div><b class="key">Internacionalización</b><span class="sub">Workshop Integrity AI · 45 asistentes</span></div>
+          </div>
+        <div class="er-txt">
+          <span class="label">Cooperación internacional</span>
+          <h3>Erasmus+ Integrity&nbsp;AI</h3>
+          <p class="sub">Proyecto internacional que, junto con la Resolución 422 de 2026, da sustento institucional al área.</p>
+        </div>
+        <div class="aliados">
+          <div class="placa">
+            <img class="l-integrity" src="assets/img/logo-integrity-ai.png" alt="Integrity AI">
+            <img class="l-ue" src="assets/img/logo-cofinanciado-ue.png" alt="Cofinanciado por la Unión Europea">
+          </div>
+        </div>
+      </div>
+      <div class="ia-kpis">
+          <div class="card reveal" style="--i:27"><span class="num" data-count="257">257</span><b>Certificaciones en IA</b></div>
+          <div class="card inic reveal" style="--i:28">
+            <div class="in-h"><span class="num" data-count="7">7</span><b>Iniciativas en IA</b><span class="in-tot"><b>4</b> formaciones · <b>3</b> eventos</span></div>
+            <div class="in-body" id="inic" aria-live="polite"></div>
+            <div class="in-dots" id="inicDots" aria-hidden="true"></div>
+          </div>
+        </div>
+            </div>
+      <div class="card reveal" style="--i:30">
+        <div class="hub">
+          <div class="lab">
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>
+              <b>Laboratorio de IA</b>
+            </div>
+          </div>
+          <ul class="acc">
+            <li><h3>Comité de IA</h3><p class="sub">Articulación y seguimiento</p></li>
+            <li class="dest"><h3>Erasmus+ Integrity AI</h3><span class="tagi">Internacional</span></li>
+            <li><h3>Documentos marco</h3><p class="sub">Uso ético y Política Corporativa de IA</p></li>
+            <li><h3>Formación docente en IA</h3><p class="sub">Competencias en IA</p></li>
+          </ul>
+        </div>
+      </div>
+      <p class="fuente"><span class="label">Fuente</span>Informe interno del CEA.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p>Fuente: informe interno del CEA. Las cifras de formación docente cubren de 2021 al segundo periodo de 2026.</p>
+      <p>Contacto: <span class="mail">cea@usbcali.edu.co</span></p>
+      <p>Textos de presentación pendientes de revisión editorial. Los tonos de día del modo claro están pendientes de validación institucional.</p>
+    </div>
+    <div class="firma">
+      <svg viewBox="0 0 160 160" aria-hidden="true">
+        <path fill="var(--p-formacion)" d="M43.20 30.40L43.20 9.60A6.40 6.40 0 0 1 49.60 3.20L150.40 3.20A6.40 6.40 0 0 1 156.80 9.60L156.80 70.40A6.40 6.40 0 0 1 150.40 76.80L129.60 76.80A6.40 6.40 0 0 1 123.20 70.40L123.20 40.00A3.20 3.20 0 0 0 120.00 36.80L49.60 36.80A6.40 6.40 0 0 1 43.20 30.40Z"/>
+        <path fill="var(--p-curricular)" d="M43.20 150.40L43.20 49.60A6.40 6.40 0 0 1 49.60 43.20L110.40 43.20A6.40 6.40 0 0 1 116.80 49.60L116.80 70.40A6.40 6.40 0 0 1 110.40 76.80L80.00 76.80A3.20 3.20 0 0 0 76.80 80.00L76.80 150.40A6.40 6.40 0 0 1 70.40 156.80L49.60 156.80A6.40 6.40 0 0 1 43.20 150.40Z"/>
+        <path fill="var(--p-digital)" d="M83.20 150.40L83.20 89.60A6.40 6.40 0 0 1 89.60 83.20L150.40 83.20A6.40 6.40 0 0 1 156.80 89.60L156.80 150.40A6.40 6.40 0 0 1 150.40 156.80L89.60 156.80A6.40 6.40 0 0 1 83.20 150.40Z"/>
+        <path fill="var(--p-ia)" d="M3.20 150.40L3.20 9.60A6.40 6.40 0 0 1 9.60 3.20L30.40 3.20A6.40 6.40 0 0 1 36.80 9.60L36.80 150.40A6.40 6.40 0 0 1 30.40 156.80L9.60 156.80A6.40 6.40 0 0 1 3.20 150.40Z"/>
+      </svg>
+      <span class="label">CEA · USB Cali</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fmt = new Intl.NumberFormat("es-CO");
+  var fmtPct = new Intl.NumberFormat("es-CO", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  var ease = function (t) { return 1 - Math.pow(1 - t, 4); };
+
+  /* ---- Tema ---- */
+  var themeBtn = document.getElementById("themeBtn");
+  var themeLbl = document.getElementById("themeLbl");
+  function isDark() {
+    var t = root.getAttribute("data-theme");
+    if (t) return t === "dark";
+    return !(window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches);
+  }
+  function syncThemeLbl() { themeLbl.textContent = isDark() ? "Modo día" : "Modo noche"; }
+  try { var saved = localStorage.getItem("cea-tema"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  syncThemeLbl();
+  themeBtn.addEventListener("click", function () {
+    var next = isDark() ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("cea-tema", next); } catch (e) {}
+    syncThemeLbl();
+  });
+
+  /* ---- Contadores ---- */
+  function countUp(el, delay) {
+    var target = Number(el.getAttribute("data-count"));
+    if (reduce || !target) { el.textContent = fmt.format(target); return; }
+    var dur = 1100, start = null;
+    el.textContent = "0";
+    setTimeout(function () {
+      function step(ts) {
+        if (start === null) start = ts;
+        var p = Math.min(1, (ts - start) / dur);
+        el.textContent = fmt.format(Math.round(target * ease(p)));
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }, delay || 0);
+  }
+  function countIn(scope, baseDelay) {
+    scope.querySelectorAll("[data-count]").forEach(function (el, i) { countUp(el, (baseDelay || 0) + i * 60); });
+  }
+
+  /* ---- Formación: gráficos que se alternan ---- */
+  var TOTAL = 1863;
+  var LINEAS = [
+    { n: "Competencias Digitales e IA", v: 792, d: "7 cohortes + 6 talleres + 2 Certificación AVA + 1 Seminario en Desarrollo de Competencias Informacionales" },
+    { n: "Eventos Académicos", v: 332, d: "Semana de la Innovación e IA SUMMIT" },
+    { n: "Gestión Curricular", v: 274, d: "4 cohortes + 4 diplomados en Educación Superior + 1 Conferencia Internacional" },
+    { n: "Pedagogía e Innovación", v: 248, d: "2 cohortes + 3 talleres + 1 curso + 1 Diplomado Histórico" },
+    { n: "Lengua Extranjera", v: 154, d: "2 cohortes + 1 seminario + 1 Semana de Formación Académica en Inglés" },
+    { n: "Desarrollo Humano", v: 63, d: "1 Seminario en Salud Mental + 1 Seminario en Educación Inclusiva" }
+  ];
+  var TINT = [100, 82, 68, 56, 46, 38];
+  function tono(i) { return "color-mix(in srgb, var(--p-formacion) " + TINT[i] + "%, #fafbf7)"; }
+  function pct(v) { return fmtPct.format(v / TOTAL * 100) + " %"; }
+  var viz = document.getElementById("viz");
+  var VIZ = ["mapa", "barras"], VIZ_MS = 8000, vizMode = "mapa", vizTimer = null, vizPausa = 0, vizRaf = [], vizSub = [];
+  function vizClear() { vizRaf.forEach(cancelAnimationFrame); vizRaf = []; vizSub.forEach(clearTimeout); vizSub = []; }
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function sv(tag, attrs) { var e = document.createElementNS(SVGNS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+
+  function arcPath(cx, cy, R, r, a0, a1) {
+    if (a1 - a0 < 0.0005) return "";
+    var large = a1 - a0 > Math.PI ? 1 : 0;
+    function pt(rad, a) { return (cx + rad * Math.cos(a)).toFixed(2) + " " + (cy + rad * Math.sin(a)).toFixed(2); }
+    return "M" + pt(R, a0) + "A" + R + " " + R + " 0 " + large + " 1 " + pt(R, a1) +
+      "L" + pt(r, a1) + "A" + r + " " + r + " 0 " + large + " 0 " + pt(r, a0) + "Z";
+  }
+
+  function drawDona(stage, animate, own) {
+    var addR = own ? function (x) { donaRaf.push(x); } : function (x) { vizRaf.push(x); };
+    var addS = own ? function (x) { donaSub.push(x); } : function (x) { vizSub.push(x); };
+    var box = el("div", "dona");
+    var svg = sv("svg", { viewBox: "0 0 340 340", role: "img", "aria-label": "Gráfico de dona de participaciones docentes por línea estratégica" });
+    var cx = 170, cy = 170, R = 166, r = 108, start = -Math.PI / 2, pad = 0.012, acc = 0, arcs = [];
+    LINEAS.forEach(function (d, i) {
+      var a0 = start + acc / TOTAL * 2 * Math.PI; acc += d.v;
+      var a1 = start + acc / TOTAL * 2 * Math.PI;
+      var p = sv("path", {}); p.style.fill = tono(i); p.style.transition = "opacity .3s"; svg.appendChild(p);
+      arcs.push({ p: p, a0: a0 + pad, a1: a1 - pad });
+    });
+    var t1 = sv("text", { x: cx, y: cy + 4, "text-anchor": "middle", "class": "dc-num" });
+    var t2 = sv("text", { x: cx, y: cy + 34, "text-anchor": "middle", "class": "dc-lbl" });
+    svg.appendChild(t1); svg.appendChild(t2);
+    var ley = el("ul", "ley");
+    var items = LINEAS.map(function (d, i) {
+      var li = el("li"), sw = el("i");
+      sw.style.background = tono(i);
+      li.appendChild(sw); li.appendChild(el("span", "n", d.n));
+      li.appendChild(el("span", "v", fmt.format(d.v)));
+      li.addEventListener("mouseenter", function () { foco(i); });
+      li.addEventListener("mouseleave", function () { foco(null); });
+      ley.appendChild(li);
+      return li;
+    });
+    function foco(i) {
+      arcs.forEach(function (a, j) { a.p.style.opacity = (i == null || i === j) ? 1 : .25; });
+      items.forEach(function (li, j) { li.classList.toggle("off", i != null && i !== j); li.classList.toggle("on", i === j); });
+      if (i == null) { t1.textContent = fmt.format(TOTAL); t2.textContent = "participaciones"; }
+      else { t1.textContent = fmt.format(LINEAS[i].v); t2.textContent = LINEAS[i].n; }
+    }
+    arcs.forEach(function (a, j) {
+      a.p.addEventListener("mouseenter", function () { foco(j); });
+      a.p.addEventListener("mouseleave", function () { foco(null); });
+    });
+    foco(null);
+    box.appendChild(svg); box.appendChild(ley); stage.appendChild(box);
+    function paint(S) { arcs.forEach(function (a) { a.p.setAttribute("d", arcPath(cx, cy, R, r, a.a0, Math.min(a.a1, start + S))); }); }
+    if (!animate || reduce) paint(2 * Math.PI);
+    else {
+      var t0 = null;
+      var step = function (ts) {
+        if (t0 === null) t0 = ts;
+        var q = Math.min(1, (ts - t0) / 1100);
+        paint(2 * Math.PI * ease(q));
+        if (q < 1) addR(requestAnimationFrame(step));
+      };
+      addR(requestAnimationFrame(step));
+    }
+    /* Ilumina cada línea en turno después de construir la dona */
+    LINEAS.forEach(function (d, i) { addS(setTimeout(function () { foco(i); }, 1500 + i * 1000)); });
+    addS(setTimeout(function () { foco(null); }, 1500 + LINEAS.length * 1000));
+  }
+
+  function squarify(items, x, y, w, h) {
+    var total = items.reduce(function (s, it) { return s + it.v; }, 0);
+    var k = (w * h) / total, rects = [], row = [];
+    var rest = items.map(function (it) { return Object.assign({ a: it.v * k }, it); });
+    function worst(rw, side) {
+      var s = 0, mx = 0, mn = Infinity;
+      rw.forEach(function (r) { s += r.a; mx = Math.max(mx, r.a); mn = Math.min(mn, r.a); });
+      return Math.max(side * side * mx / (s * s), (s * s) / (side * side * mn));
+    }
+    function layout() {
+      if (!row.length) return;
+      var s = row.reduce(function (a, r) { return a + r.a; }, 0);
+      if (w >= h) {
+        var cw = s / h, yy = y;
+        row.forEach(function (r) { var rh = r.a / cw; rects.push(Object.assign({ x: x, y: yy, w: cw, h: rh }, r)); yy += rh; });
+        x += cw; w -= cw;
+      } else {
+        var rh2 = s / w, xx = x;
+        row.forEach(function (r) { var rw = r.a / rh2; rects.push(Object.assign({ x: xx, y: y, w: rw, h: rh2 }, r)); xx += rw; });
+        y += rh2; h -= rh2;
+      }
+      row = [];
+    }
+    while (rest.length) {
+      var side = Math.min(w, h), c = rest[0];
+      if (!row.length || worst(row.concat([c]), side) <= worst(row, side)) { row.push(c); rest.shift(); }
+      else layout();
+    }
+    layout();
+    return rects;
+  }
+
+  function drawMapa(stage, animate) {
+    var box = el("div", "mapa-t");
+    box.setAttribute("role", "img");
+    box.setAttribute("aria-label", "Mapa de áreas de participaciones docentes por línea estratégica");
+    stage.appendChild(box);
+    var W = box.clientWidth, H = box.clientHeight;
+    if (!W || !H) return;
+    var rects = squarify(LINEAS.map(function (d, i) { return { d: d, i: i, v: d.v }; }), 0, 0, W, H);
+    rects.forEach(function (r, k) {
+      var g = 3, t = el("div", "tile");
+      t.style.left = (r.x + g) + "px"; t.style.top = (r.y + g) + "px";
+      t.style.width = Math.max(0, r.w - 2 * g) + "px"; t.style.height = Math.max(0, r.h - 2 * g) + "px";
+      t.style.background = tono(r.i);
+      if (animate && !reduce) t.style.animationDelay = (k * 110) + "ms"; else t.style.animation = "none";
+      var top = el("div");
+      top.appendChild(el("b", null, r.d.n));
+      if (r.w < 100) t.classList.add("estrecha");
+      if (r.w > 280 && r.h > 150) top.appendChild(el("small", "det", r.d.d));
+      var bot = el("div", "tb");
+      var num = el("span", "tv", fmt.format(r.d.v));
+      num.style.fontSize = Math.max(18, Math.min(60, Math.sqrt(r.w * r.h) / 5)).toFixed(0) + "px";
+      bot.appendChild(num);
+      t.appendChild(top); t.appendChild(bot); box.appendChild(t);
+    });
+  }
+
+  function drawBarras(stage, animate) {
+    var ul = el("ul", "bars");
+    LINEAS.forEach(function (d, i) {
+      var li = el("li", "bar");
+      li.tabIndex = 0;
+      var r1 = el("div", "row1");
+      r1.appendChild(el("span", "name", d.n));
+      r1.appendChild(el("span", "val", fmt.format(d.v)));
+      var tr = el("div", "track"), f = el("span", "fill");
+      f.style.background = tono(i);
+      tr.appendChild(f);
+      li.appendChild(r1); li.appendChild(tr); li.appendChild(el("span", "det", d.d));
+      ul.appendChild(li);
+      var w = d.v / 800 * 100;
+      if (animate && !reduce) {
+        f.style.setProperty("--w", 0);
+        f.style.transitionDelay = (i * 90) + "ms";
+        vizRaf.push(requestAnimationFrame(function () { vizRaf.push(requestAnimationFrame(function () { f.style.setProperty("--w", w); })); }));
+      } else f.style.setProperty("--w", w);
+    });
+    stage.appendChild(ul);
+  }
+
+  var DRAW = { dona: drawDona, mapa: drawMapa, barras: drawBarras };
+  function vizVisible() { return viz.getClientRects().length > 0; }
+  function setViz(mode, animate, sinProgreso) {
+    vizMode = mode;
+    vizClear();
+    document.querySelectorAll("[data-viz]").forEach(function (b) {
+      var on = b.dataset.viz === mode;
+      b.setAttribute("aria-pressed", on);
+      var pg = b.querySelector(".pg");
+      pg.classList.remove("run");
+      if (on && !sinProgreso) { void pg.offsetWidth; pg.classList.add("run"); }
+    });
+    var render = function () {
+      viz.innerHTML = "";
+      var st = el("div", "viz-stage v-" + mode);
+      viz.appendChild(st);
+      DRAW[mode](st, animate);
+    };
+    if (animate && !reduce && viz.firstChild) { viz.firstChild.classList.add("out"); vizSub.push(setTimeout(render, 260)); }
+    else render();
+  }
+  function vizTick() {
+    clearTimeout(vizTimer);
+    vizTimer = setTimeout(function () {
+      if (Date.now() >= vizPausa && vizVisible()) setViz(VIZ[(VIZ.indexOf(vizMode) + 1) % VIZ.length], true);
+      vizTick();
+    }, VIZ_MS);
+  }
+  var donaBox = document.getElementById("vizA"), donaRaf = [], donaSub = [], donaLoop = null;
+  function donaClear() { donaRaf.forEach(cancelAnimationFrame); donaRaf = []; donaSub.forEach(clearTimeout); donaSub = []; }
+  function donaDraw(animate) {
+    if (!donaBox.getClientRects().length) return;
+    donaClear();
+    donaBox.innerHTML = "";
+    var st = el("div", "viz-stage v-dona");
+    donaBox.appendChild(st);
+    drawDona(st, animate, true);
+  }
+  function donaReset() {
+    donaDraw(true);
+    clearInterval(donaLoop);
+    donaLoop = setInterval(function () { donaDraw(true); }, 9000);
+  }
+  function vizReset() {
+    vizPausa = 0;
+    if (vizVisible()) setViz("mapa", true);
+    vizTick();
+    donaReset();
+  }
+  document.querySelectorAll("[data-viz]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      vizPausa = Date.now() + 30000;
+      setViz(b.dataset.viz, true, true);
+      vizTick();
+    });
+  });
+
+  /* ---- Educación Digital: proyectos interinstitucionales que rotan ---- */
+  var PROYECTOS = [
+    { c: "IMBERA / Friomix del Cauca", t: "3 cursos virtuales: cumplimiento normativo, ética empresarial y protección de datos", y: 2023 },
+    { c: "Alianza Bioversity & CIAT", t: "Formación para empleados", y: 2022, temas: ["Política de tarjetas de crédito corporativas", "Riesgos"] },
+    { c: "Comfandi", t: "VIII Encuentro de experiencias significativas de colegios Comfandi", y: 2022 },
+    { c: "Municipio de Candelaria", t: "Curso virtual de innovación pedagógica con uso de TIC para docentes", y: 2019 },
+    { c: "Clínica de Occidente", t: "Diplomado en redacción de artículos científicos en investigación clínica", y: 2019 },
+    { c: "Monómeros / Ecofértil", t: "Curso de servicio al cliente y comunicación asertiva", y: 2018 },
+    { c: "CENTELSA", t: "Diseño de ambientes virtuales de aprendizaje", y: 2017 },
+    { c: "Sociedad Portuaria Buenaventura", t: "Formación integral en el sistema operativo NAVIS", y: 2017 },
+    { c: "Alcaldía de Santiago de Cali", t: "Diplomado Cátedra de Paz abierta orientada a la innovación social", y: 2017 }
+  ];
+  var proyBox = document.getElementById("proy"), proyN = document.getElementById("proyN"), proyDots = document.getElementById("proyDots");
+  var proyIdx = 0, PROY_MS = 3600;
+  PROYECTOS.forEach(function () { proyDots.appendChild(document.createElement("span")); });
+  function proyNodo(d) {
+    var n = document.createElement("div"); n.className = "pj";
+    var meta = document.createElement("div"); meta.className = "meta";
+    var y = document.createElement("span"); y.className = "pill"; y.textContent = d.y; meta.appendChild(y);
+    var cli = document.createElement("p"); cli.className = "cli"; cli.textContent = d.c;
+    var tit = document.createElement("p"); tit.className = "tit"; tit.textContent = d.t;
+    n.appendChild(meta); n.appendChild(cli); n.appendChild(tit);
+    if (d.temas) {
+      var tg = document.createElement("div"); tg.className = "meta";
+      d.temas.forEach(function (x) { var s = document.createElement("span"); s.className = "pill temas"; s.textContent = x; tg.appendChild(s); });
+      n.appendChild(tg);
+    }
+    return n;
+  }
+  function proyShow(i, animate) {
+    proyIdx = i % PROYECTOS.length;
+    var nuevo = proyNodo(PROYECTOS[proyIdx]);
+    var viejo = proyBox.firstElementChild;
+    if (animate && !reduce) {
+      nuevo.classList.add("entra");
+      proyBox.appendChild(nuevo);
+      void nuevo.offsetWidth;
+      nuevo.classList.remove("entra");
+      Array.prototype.slice.call(proyBox.children).forEach(function (c) { if (c === nuevo || c.classList.contains("sale")) return; c.classList.add("sale"); setTimeout(function () { if (c.parentNode) c.parentNode.removeChild(c); }, 520); });
+    } else {
+      proyBox.innerHTML = ""; proyBox.appendChild(nuevo);
+    }
+    proyN.textContent = proyIdx + 1;
+    Array.prototype.forEach.call(proyDots.children, function (s, k) {
+      s.classList.toggle("hecho", k < proyIdx);
+      s.classList.remove("on");
+      if (k === proyIdx) { void s.offsetWidth; s.classList.add("on"); }
+    });
+  }
+  var proyTimer = null;
+  function proyStart(desde, animate) {
+    clearInterval(proyTimer);
+    proyShow(desde, animate);
+    proyTimer = setInterval(function () { proyShow(proyIdx + 1, true); }, PROY_MS);
+  }
+  proyStart(0, false);
+
+  /* ---- IA: iniciativas que rotan ---- */
+  var INIC = [
+    { tp: "Formación", n: "Taller ChatGPT para profesores" },
+    { tp: "Formación", n: "Diplomado en Competencias Digitales con IA" },
+    { tp: "Formación", n: "Workshop Integrity AI · Erasmus+", extra: "Internacional" },
+    { tp: "Formación", n: "Webinar Copilot para docentes" },
+    { tp: "Evento", n: "IA Summit: Innovación Educativa y Empresarial" },
+    { tp: "Evento", n: "IV Semana de la Innovación Educativa" },
+    { tp: "Evento", n: "V Semana de la Innovación Educativa" }
+  ];
+  var inicBox = document.getElementById("inic"), inicDots = document.getElementById("inicDots");
+  var inicIdx = 0, INIC_MS = 3000, inicTimer = null;
+  INIC.forEach(function () { inicDots.appendChild(document.createElement("span")); });
+  function inicNodo(d) {
+    var n = document.createElement("div"); n.className = "pj";
+    var meta = document.createElement("div"); meta.className = "meta";
+    var a = document.createElement("span"); a.className = "pill tipo" + (d.tp === "Evento" ? " ev" : ""); a.textContent = d.tp; meta.appendChild(a);
+    if (d.extra) { var b = document.createElement("span"); b.className = "pill tipo"; b.textContent = d.extra; meta.appendChild(b); }
+    var c = document.createElement("p"); c.className = "cli"; c.textContent = d.n;
+    n.appendChild(meta); n.appendChild(c);
+    return n;
+  }
+  function inicShow(i, animate) {
+    inicIdx = i % INIC.length;
+    var nuevo = inicNodo(INIC[inicIdx]), viejo = inicBox.firstElementChild;
+    if (animate && !reduce) {
+      nuevo.classList.add("entra"); inicBox.appendChild(nuevo); void nuevo.offsetWidth; nuevo.classList.remove("entra");
+      Array.prototype.slice.call(inicBox.children).forEach(function (c) { if (c === nuevo || c.classList.contains("sale")) return; c.classList.add("sale"); setTimeout(function () { if (c.parentNode) c.parentNode.removeChild(c); }, 520); });
+    } else { inicBox.innerHTML = ""; inicBox.appendChild(nuevo); }
+    Array.prototype.forEach.call(inicDots.children, function (s, k) {
+      s.classList.toggle("hecho", k < inicIdx);
+      s.classList.remove("on");
+      if (k === inicIdx) { void s.offsetWidth; s.classList.add("on"); }
+    });
+  }
+  function inicStart(desde, animate) {
+    clearInterval(inicTimer);
+    inicShow(desde, animate);
+    inicTimer = setInterval(function () { inicShow(inicIdx + 1, true); }, INIC_MS);
+  }
+  inicStart(0, false);
+
+  /* ---- Barras partidas y módulos ---- */
+  function growApuestas(scope, animate) {
+    scope.querySelectorAll(".ap-list li").forEach(function (li, i) {
+      var f = li.querySelector(".fl"), w = li.getAttribute("data-w") + "%";
+      if (animate && !reduce) {
+        f.style.transition = "none"; f.style.width = "0"; void f.offsetWidth; f.style.transition = "";
+        f.style.transitionDelay = (300 + i * 130) + "ms";
+        requestAnimationFrame(function () { f.style.width = w; });
+      } else f.style.width = w;
+    });
+  }
+  function growSplits(scope, animate) {
+    growApuestas(scope, animate);
+    scope.querySelectorAll("[data-grow]").forEach(function (el) {
+      var g = el.getAttribute("data-grow");
+      if (animate && !reduce) {
+        el.style.transition = "none"; el.style.flexGrow = 0.001; void el.offsetWidth; el.style.transition = "";
+        setTimeout(function () { el.style.flexGrow = g; }, 250);
+      } else { el.style.flexGrow = g; }
+    });
+    scope.querySelectorAll(".modulos span").forEach(function (m, i) {
+      if (!animate || reduce) return;
+      m.animate([{ transform: "scale(.2)", opacity: 0 }, { transform: "none", opacity: 1 }],
+        { duration: 500, delay: 200 + i * 70, easing: "cubic-bezier(.16,1,.3,1)", fill: "backwards" });
+    });
+  }
+
+  /* ---- Filtro por área ---- */
+  var AREAS = ["formacion", "curricular", "digital", "ia"];
+  var PIECE = { formacion: "formacion", curricular: "curricular", digital: "digital", ia: "inteligencia" };
+  var symbol = document.getElementById("symbol");
+  var mapa = document.getElementById("mapa");
+  /* ---- Ajuste a pantalla ---- */
+  var pantallaMQ = window.matchMedia("(min-width: 1024px) and (min-height: 540px)");
+  function pantalla() { return root.classList.contains("pantalla"); }
+  var DISENO = 1280;
+  function fit() {
+    var stage = document.getElementById("stage");
+    document.querySelectorAll(".slide").forEach(function (s) {
+      if (!pantalla() || s.hidden) { s.style.removeProperty("--s"); return; }
+      var W = stage.clientWidth, H = stage.clientHeight, h = s.offsetHeight;
+      if (!W || !H || !h) return;
+      var dw = Number(s.dataset.ancho) || DISENO;
+      var sc = Math.min(W / dw, H / h) * 0.96;
+      s.style.setProperty("--s", Math.min(sc, 1.9).toFixed(4));
+    });
+  }
+  function aplicarModo() {
+    root.classList.toggle("pantalla", pantallaMQ.matches);
+    setArea(document.body.getAttribute("data-area") || "todas", false);
+  }
+  var fitTimer = null;
+  window.addEventListener("resize", function () { clearTimeout(fitTimer); fitTimer = setTimeout(function () { aplicarModo(); if (vizVisible()) { setViz(vizMode, false); donaDraw(false); } }, 150); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+
+  function setArea(area, fromUser, noScroll) {
+    if (AREAS.indexOf(area) < 0) area = "todas";
+    document.body.setAttribute("data-area", area);
+    symbol.setAttribute("data-active", area);
+    mapa.setAttribute("data-active", area);
+    document.querySelectorAll(".chip[data-go]").forEach(function (c) { c.setAttribute("aria-pressed", c.dataset.go === area); });
+    document.querySelectorAll(".leyenda [data-go]").forEach(function (c) { c.setAttribute("aria-pressed", c.dataset.go === area); });
+    symbol.querySelectorAll(".piece").forEach(function (p) { p.classList.toggle("on", area !== "todas" && p.dataset.area === PIECE[area]); });
+    document.querySelectorAll(".kpi").forEach(function (k) { k.classList.toggle("on", k.dataset.k === area); });
+    var shown = [];
+    var enPantalla = pantalla();
+    document.querySelectorAll(".slide").forEach(function (s) {
+      var vis = enPantalla ? s.dataset.area === area
+        : (s.dataset.area === "todas" || area === "todas" || s.dataset.area === area);
+      s.hidden = !vis;
+      if (vis) shown.push(s);
+    });
+    fit();
+    if (fromUser) {
+      shown.forEach(function (s) {
+        s.querySelectorAll(".reveal").forEach(function (r) { r.style.animation = "none"; void r.offsetWidth; r.style.animation = ""; });
+        countIn(s, 150);
+        growSplits(s, true);
+        if (s.id === "sec-formacion") vizReset();
+      });
+      document.querySelectorAll(".kpi.on [data-count]").forEach(function (el) { countUp(el, 0); });
+      if (area !== "todas" && !noScroll && !enPantalla) {
+        var target = document.getElementById("sec-" + area);
+        var top = target.getBoundingClientRect().top + window.scrollY - 64;
+        if (window.scrollY > top || window.scrollY + window.innerHeight < top + 200) {
+          window.scrollTo({ top: top, behavior: reduce ? "auto" : "smooth" });
+        }
+      }
+    }
+  }
+  function setHash(area) {
+    var h = area === "todas" ? "" : area;
+    if (("#" + h) !== location.hash && !(h === "" && location.hash === "")) {
+      try { history.replaceState(null, "", h ? "#" + h : location.pathname + location.search); } catch (e) {}
+    }
+  }
+  function go(area, noScroll) { setHash(area); setArea(area, true, noScroll); }
+
+  /* ---- Modo pantalla: rotación automática ---- */
+  var ORDEN = ["todas", "formacion", "curricular", "digital", "ia"];
+  var DUR = { todas: 13000, formacion: 24000, curricular: 15000, digital: 34000, ia: 23000 };
+  var COLOR = { todas: "var(--accent)", formacion: "var(--formacion)", curricular: "var(--curricular)", digital: "var(--digital)", ia: "var(--ia)" };
+  var PAUSA_USUARIO = 60000;
+  var mainEl = document.querySelector("main");
+  var barra = document.getElementById("barra");
+  var paso = document.getElementById("paso");
+  var playBtn = document.getElementById("playBtn"), playLbl = document.getElementById("playLbl"), playIco = document.getElementById("playIco");
+  var idx = 0, auto = true, subs = [], resumeTimer = null;
+  function later(fn, ms) { subs.push(setTimeout(fn, ms)); }
+  function clearSubs() { subs.forEach(clearTimeout); subs = []; }
+  function barraStop() { barra.style.transition = "none"; barra.style.transform = "scaleX(0)"; }
+  function barraRun(ms, area) {
+    barra.style.setProperty("--pc", COLOR[area]);
+    barraStop(); void barra.offsetWidth;
+    barra.style.transition = "transform " + ms + "ms linear";
+    barra.style.transform = "scaleX(1)";
+  }
+  function sectionTop(area) {
+    if (area === "todas") return 0;
+    return document.getElementById("sec-" + area).getBoundingClientRect().top + window.scrollY - 64;
+  }
+  function scrollToY(y) { window.scrollTo({ top: Math.max(0, y), behavior: reduce ? "auto" : "smooth" }); }
+  function show(i) {
+    clearSubs(); clearTimeout(resumeTimer);
+    idx = ((i % ORDEN.length) + ORDEN.length) % ORDEN.length;
+    var area = ORDEN[idx], dur = DUR[area];
+    paso.textContent = (idx + 1) + " / " + ORDEN.length;
+    mainEl.classList.add("saliendo");
+    later(function () {
+      mainEl.classList.remove("saliendo");
+      go(area, true);
+      if (area === "digital") proyStart(0, true);
+      if (area === "ia") inicStart(0, true);
+      if (!pantalla()) scrollToY(sectionTop(area));
+      barraRun(dur, area);
+      if (auto) later(function () { show(idx + 1); }, dur);
+    }, reduce ? 0 : 360);
+  }
+  function setAuto(on) {
+    auto = on;
+    playBtn.setAttribute("aria-pressed", on);
+    playLbl.textContent = on ? "Pausar rotación" : "Reanudar rotación";
+    playIco.innerHTML = on ? '<path d="M8 5v14M16 5v14"/>' : '<path d="M7 4l13 8-13 8z"/>';
+    clearSubs(); clearTimeout(resumeTimer);
+    if (on) show(idx + 1); else barraStop();
+  }
+  playBtn.addEventListener("click", function () { setAuto(!auto); });
+  function userGo(area) {
+    clearSubs(); clearTimeout(resumeTimer); barraStop();
+    go(area);
+    idx = Math.max(0, ORDEN.indexOf(area));
+    paso.textContent = (idx + 1) + " / " + ORDEN.length;
+    if (auto) resumeTimer = setTimeout(function () { show(idx + 1); }, PAUSA_USUARIO);
+  }
+
+  document.querySelectorAll("[data-go]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var cur = document.body.getAttribute("data-area");
+      var a = b.dataset.go;
+      userGo(b.closest(".leyenda") && cur === a ? "todas" : a);
+    });
+  });
+  var BYPIECE = { formacion: "formacion", curricular: "curricular", digital: "digital", inteligencia: "ia" };
+  symbol.querySelectorAll(".piece").forEach(function (p) {
+    function act() {
+      var a = BYPIECE[p.dataset.area];
+      userGo(document.body.getAttribute("data-area") === a ? "todas" : a);
+    }
+    p.addEventListener("click", act);
+    p.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); act(); } });
+  });
+  window.addEventListener("hashchange", function () { userGo(location.hash.slice(1) || "todas"); });
+
+  /* Pantalla completa, pantalla siempre encendida y cursor oculto */
+  var fsBtn = document.getElementById("fsBtn");
+  fsBtn.addEventListener("click", function () {
+    try {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else if (root.requestFullscreen) { var p = root.requestFullscreen(); if (p && p.catch) p.catch(function () {}); }
+    } catch (e) {}
+  });
+  var lock = null;
+  function wake() {
+    try {
+      if (navigator.wakeLock && document.visibilityState === "visible") {
+        navigator.wakeLock.request("screen").then(function (l) { lock = l; }).catch(function () {});
+      }
+    } catch (e) {}
+  }
+  document.addEventListener("visibilitychange", wake);
+  wake();
+  var cursorTimer = null;
+  function cursorIdle() {
+    document.body.classList.remove("sin-cursor");
+    clearTimeout(cursorTimer);
+    cursorTimer = setTimeout(function () { document.body.classList.add("sin-cursor"); }, 3000);
+  }
+  document.addEventListener("mousemove", cursorIdle);
+  cursorIdle();
+
+  /* ---- Arranque ---- */
+  var inicial = location.hash.slice(1);
+  root.classList.toggle("pantalla", pantallaMQ.matches);
+  setArea(inicial, false);
+  vizReset();
+  countIn(document, 250);
+  growSplits(document, true);
+  setTimeout(function () { symbol.classList.remove("ensamblar"); }, 2200);
+  idx = Math.max(0, ORDEN.indexOf(AREAS.indexOf(inicial) < 0 ? "todas" : inicial));
+  paso.textContent = (idx + 1) + " / " + ORDEN.length;
+  barraRun(DUR[ORDEN[idx]], ORDEN[idx]);
+  subs.push(setTimeout(function () { show(idx + 1); }, DUR[ORDEN[idx]]));
+})();
+</script>
+
+</body>
+</html>
