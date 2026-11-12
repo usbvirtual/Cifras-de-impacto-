@@ -648,6 +648,10 @@ body.sin-cursor, body.sin-cursor * { cursor: none !important; }
 .overview .kpi { grid-template-rows: auto auto 1fr; }
 .overview .kpi .tag { min-height: 2.6em; align-items: flex-start; }
 .overview .kpi .tag i { margin-top: 3px; }
+.overview .kpi { transition: opacity .4s var(--curva), transform .4s var(--curva), scale .3s var(--curva), box-shadow .3s var(--curva), border-color .3s var(--curva); }
+@media (hover: hover) {
+  .overview .kpi:hover { scale: 1.05; z-index: 2; border-color: var(--c); box-shadow: 0 16px 34px -18px color-mix(in srgb, var(--c) 70%, transparent); }
+}
 .pantalla .overview .kpi { min-height: 300px; }
 .pantalla .overview .kpi .num { font-size: 5.2rem; }
 .pantalla .overview .kpi p { font-size: 1.2rem; }
